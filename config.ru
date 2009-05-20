@@ -1,3 +1,3 @@
 require 'jd'
 
-run Sinatra::Application
+run RedArtisan::App
