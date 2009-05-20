@@ -5,6 +5,7 @@ require 'rubygems'
 require 'sinatra'
 require 'lib/sinatra/redartisan/blog'
 require 'lib/sinatra/redartisan/content'
+require 'lib/sinatra/redartisan/helpers'
 
 module RedArtisan
   
