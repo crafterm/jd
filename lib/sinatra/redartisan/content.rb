@@ -26,7 +26,7 @@ module Sinatra
         
           def register(post)
             posts << post
-            puts "registered #{post.inspect}"
+            puts "registered article #{post[:path]}"
           end
           
           def recent(count = 10)
@@ -34,7 +34,7 @@ module Sinatra
           end
         
           def find_by_year_month_day_title(year, month, day, title)
-            posts.detect { |p| p[:year] == year && p[:month] == month && p[:day] == day && p[:title] == title }
+            posts.detect { |p| p[:permalink] == "#{year}/#{month}/#{day}/#{title}" }
           end
         
           def posts
@@ -52,6 +52,11 @@ module Sinatra
         def article(name, &block)
           @options[:name] = name
           instance_eval &block
+        end
+        
+        def content
+          content_filename = File.join(File.expand_path(File.dirname(@options[:path])), 'content.markdown')
+          File.read(content_filename)
         end
         
         def method_missing(sym, *args, &block)
