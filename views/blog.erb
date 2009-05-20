@@ -1,5 +1,5 @@
 All blog posts
 
 <% @posts.each do |post| %>
-<p><%= post.name %> <%= post.permalink %> </p>
+<p><a href="<%= url(post.permalink) %>"><%= post.name %></a></p>
 <% end %>
