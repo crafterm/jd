@@ -26,7 +26,7 @@ module Sinatra
         
           def register(post)
             posts << post
-            puts "registered article #{post[:path]}"
+            puts "Registered article #{post.path}"
           end
           
           def recent(count = 10)
@@ -34,7 +34,7 @@ module Sinatra
           end
         
           def find_by_year_month_day_title(year, month, day, title)
-            posts.detect { |p| p[:permalink] == title && p[:posted] == "#{year}/#{month}/#{day}" }
+            posts.detect { |p| p.permalink == title && p.posted == "#{year}/#{month}/#{day}" }
           end
         
           def posts
@@ -81,13 +81,13 @@ module Sinatra
         attr_accessor :article, :path, :permalink
         
         def self.find_by_year_month_day_title_attachment(year, month, day, title, attachment)
-          @@attachments.detect { |a| a.permalink == "#{title}/#{attachment}" && a.article[:posted] == "#{year}/#{month}/#{day}" }
+          @@attachments.detect { |a| a.permalink == "#{title}/#{attachment}" && a.article.posted == "#{year}/#{month}/#{day}" }
         end
         
         def initialize(article, name)
           @article = article
-          @path = File.join(File.expand_path(File.dirname(article[:path])), name)
-          @permalink = "#{article[:permalink]}/#{name}"
+          @path = File.join(File.expand_path(File.dirname(article.path)), name)
+          @permalink = "#{article.permalink}/#{name}"
           (@@attachments ||= []) << self
         end
 
