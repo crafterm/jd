@@ -34,7 +34,7 @@ module Sinatra
           end
         
           def find_by_year_month_day_title(year, month, day, title)
-            posts.detect { |p| p[:permalink] == "#{title}" && p[:posted] == "#{year}/#{month}/#{day}" }
+            posts.detect { |p| p[:permalink] == title && p[:posted] == "#{year}/#{month}/#{day}" }
           end
         
           def posts
@@ -63,6 +63,10 @@ module Sinatra
           "#{@options[:posted]}/#{@options[:permalink]}"
         end
         
+        def attachments(*attachments)
+          @options[:attachments] = attachments.collect { |a| Attachment.new(self, a) }
+        end
+        
         def method_missing(sym, *args, &block)
           return @options[sym] if args.empty?
           @options[sym] = args.size == 1 ? args.first : args
@@ -73,6 +77,21 @@ module Sinatra
         end        
       end
       
+      class Attachment
+        attr_accessor :article, :path, :permalink
+        
+        def self.find_by_year_month_day_title_attachment(year, month, day, title, attachment)
+          @@attachments.detect { |a| a.permalink == "#{title}/#{attachment}" && a.article[:posted] == "#{year}/#{month}/#{day}" }
+        end
+        
+        def initialize(article, name)
+          @article = article
+          @path = File.join(File.expand_path(File.dirname(article[:path])), name)
+          @permalink = "#{article[:permalink]}/#{name}"
+          (@@attachments ||= []) << self
+        end
+
+      end
     end
   end
   

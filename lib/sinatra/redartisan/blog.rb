@@ -28,9 +28,9 @@ module Sinatra
 
         # GET /2009/05/12/rubinius-intro/rubinius.pdf
         app.get '/:year/:month/:day/:title/:attachment' do |year, month, day, title, attachment|
-          file = nil # REVISIT
-          raise NotFound, 'No such attachment'
-          send_file file
+          @attachment = Content::Attachment.find_by_year_month_day_title_attachment(year, month, day, title, attachment)
+          raise NotFound, 'No such attachment' unless @attachment
+          send_file @attachment.path, :disposition => 'attachment'
         end
         
         # POST /blog/2009/05/12/comma-intro/comments
