@@ -25,6 +25,13 @@ module Sinatra
           raise NotFound, 'No such post' unless @post
           erb :article
         end
+
+        # GET /2009/05/12/rubinius-intro/rubinius.pdf
+        app.get '/:year/:month/:day/:title/:attachment' do |year, month, day, title, attachment|
+          file = nil # REVISIT
+          raise NotFound, 'No such attachment'
+          send_file file
+        end
         
         # POST /blog/2009/05/12/comma-intro/comments
         app.post '/:year/:month/:day/:title/comments' do

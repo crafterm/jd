@@ -1,5 +1,6 @@
 article :frankfurt_rails_user_group do
-  permalink '2007/9/12/frankfurt-rug-rspec-rubinius'
-  posted '12 September 2007'
+  permalink 'frankfurt-rug-rspec-rubinius'
+  posted '2007/9/12'
   tags :frankfurt, :germany, :presentation, :rails, :ruby, :usergroup
+  attachments 'rubinius.pdf', 'rspec.pdf', 'rspec_handout.pdf'
 end

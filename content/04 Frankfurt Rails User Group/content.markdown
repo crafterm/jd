@@ -2,9 +2,9 @@ Last night I met with the local Frankfurt Rails [User Group](http://rug-rheinmai
 
 I also gave a few presentations about [Rubinius](http://rubini.us/) and [RSpec](http://rspec.rubyforge.org/), the slides are available for anyone interested:
 
-[Rubinius](/2007/9/12/rubinius.pdf)  
-[RSpec](/2007/9/12/rspec.pdf)
-[RSpec handout](/2007/9/12/rspec_handout.pdf)
+[Rubinius](/2007/9/12/frankfurt-rug-rspec-rubinius/rubinius.pdf)
+[RSpec](/2007/9/12/frankfurt-rug-rspec-rubinius/rspec.pdf)
+[RSpec handout](/2007/9/12/frankfurt-rug-rspec-rubinius/rspec_handout.pdf)
 
 Many thank to [Mariano](http://claudia-und-mariano.net/) for hosting the event, and also a special thanks to Claudia for catering! :)
 

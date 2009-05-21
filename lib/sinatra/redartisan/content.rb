@@ -34,7 +34,7 @@ module Sinatra
           end
         
           def find_by_year_month_day_title(year, month, day, title)
-            posts.detect { |p| p[:permalink] == "#{year}/#{month}/#{day}/#{title}" }
+            posts.detect { |p| p[:permalink] == "#{title}" && p[:posted] == "#{year}/#{month}/#{day}" }
           end
         
           def posts
@@ -57,6 +57,10 @@ module Sinatra
         def content
           content_filename = File.join(File.expand_path(File.dirname(@options[:path])), 'content.markdown')
           File.read(content_filename)
+        end
+        
+        def url
+          "#{@options[:posted]}/#{@options[:permalink]}"
         end
         
         def method_missing(sym, *args, &block)
