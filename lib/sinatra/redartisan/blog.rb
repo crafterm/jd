@@ -27,7 +27,7 @@ module Sinatra
         end
 
         # GET /2009/05/12/rubinius-intro/rubinius.pdf
-        app.get '/:year/:month/:day/:title/:attachment' do |year, month, day, title, attachment|
+        app.get '/assets/:year/:month/:day/:attachment' do |year, month, day, attachment|
           @attachment = options.repository.find_by_attachment(attachment)
           raise NotFound, 'No such attachment' unless @attachment
           send_file @attachment.content, :disposition => 'attachment'

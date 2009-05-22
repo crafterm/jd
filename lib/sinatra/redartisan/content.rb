@@ -37,7 +37,7 @@ module Sinatra
             @index << article
             @articles[article.permalink] = article
             article.attachments.each { |a| @attachments[a.name] = a } if article.attachments
-            puts "Registered article #{article.permalink}"
+            puts "Registered article #{article.permalink} (posted #{article.posted})"
           end
         
           def scan
@@ -74,7 +74,8 @@ module Sinatra
           @permalink = link
         end
 
-        def posted(date)
+        def posted(date = nil)
+          return @posted unless date
           @posted = date
         end
         
