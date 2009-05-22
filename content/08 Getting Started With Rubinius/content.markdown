@@ -14,7 +14,7 @@ Recently, Rubinius switched source code control from using Subversion to Git. In
 
 ## Checking out Rubinius
 
-Since Rubinius is managed by Git, you'll need to install it for your platform first. The Git home page is http://git.or.cz/, which has the Git source, and also hosts binary packages for several platforms. I personally used [Fink](http://finkproject.org/) to install Git ([macports](www.macports.org) also has a package for it, as does many popular Linux distributions).
+Since Rubinius is managed by Git, you'll need to install it for your platform first. The Git home page is http://git.or.cz/, which has the Git source, and also hosts binary packages for several platforms. I personally used [Fink](http://finkproject.org/) to install Git ([macports](http://www.macports.org/) also has a package for it, as does many popular Linux distributions).
 
 Git provides a fully distributed development experience. When you check out a project using Git, you are actually cloning an upstream repository which gives you local access to all history and changes within the project. This means you can work on Rubinius when offline, and your source code control system isn't limited by network bandwidth or connectivity.
 
