@@ -1,5 +1,5 @@
 A blog post article for: <%= params[:title] %>
 
 <div>
-<%= markup @post.content %>
+<%= markup File.read(@post.content) %>
 </div>

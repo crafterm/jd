@@ -6,103 +6,114 @@ module Sinatra
       
       def self.registered(app)
         app.configure do
-          Find.find(JD_CONTENT_ROOT) do |path|
-            if FileTest.directory?(path)
-              meta = "#{path}/meta.rb"
-              if File.exists?(meta)
-                Post.register Post.new(meta)
-                Find.prune
-              end
-            else
-              next
-            end
-          end          
+          set :repository, Repository.new(JD_CONTENT_ROOT)
         end
       end
       
-      class Post
-        
-        class << self
-        
-          def register(post)
-            posts << post
-            puts "Registered article #{post.path}"
-          end
-          
-          def recent(count = 10)
-            posts[0..count]
-          end
-        
-          def find_by_year_month_day_title(year, month, day, title)
-            posts.detect { |p| p.permalink == title && p.posted == "#{year}/#{month}/#{day}" }
-          end
-        
-          def posts
-            return @posts if @posts
-            @posts = []
-          end
-          
+      class Repository
+        attr_accessor :articles, :path
+
+        def initialize(path)
+          @path, @index, @articles, @attachments = path, [], {}, {}
+          scan
+        end
+
+        def find_by_permalink(link)
+          @articles[link]
         end
         
+        def find_by_attachment(attachment)
+          @attachments[attachment]
+        end
+
+        def recent(count = 10)
+          @index[0..9]
+        end
+        
+        private
+        
+          def article(meta)
+            article = Article.new(meta)
+            @index << article
+            @articles[article.permalink] = article
+            article.attachments.each { |a| @attachments[a.name] = a } if article.attachments
+            puts "Registered article #{article.permalink}"
+          end
+        
+          def scan
+            Find.find(@path) do |path|
+              if FileTest.directory?(path)
+                meta = "#{path}/meta.rb"
+                if File.exists?(meta)
+                  article(meta)
+                  Find.prune
+                end
+              else
+                next
+              end
+            end
+          end
+
+      end
+
+      class Article  
+        attr_accessor :permalink, :posted, :attachments, :tags, :content, :name
+        
         def initialize(meta)
-          @options = { :path => meta }
+          @path, @content = meta, File.join(File.expand_path(File.dirname(meta)), 'content.markdown')
           instance_eval File.read(meta)
         end
         
         def article(name, &block)
-          @options[:name] = name
+          @name = name
           instance_eval &block
         end
-        
-        def content
-          content_filename = File.join(File.expand_path(File.dirname(@options[:path])), 'content.markdown')
-          File.read(content_filename)
+
+        def permalink(link = nil)
+          return @permalink unless link
+          @permalink = link
+        end
+
+        def posted(date)
+          @posted = date
         end
         
         def url
-          "#{@options[:posted]}/#{@options[:permalink]}"
+          "#{@posted}/#{@permalink}"
         end
-        
+
         def attachments(*attachments)
-          @options[:attachments] = attachments.collect { |a| Attachment.new(self, a) }
+          return @attachments if attachments.empty?
+          @attachments = attachments.collect { |attachment| Attachment.new(self, attachment) }
         end
-        
-        def method_missing(sym, *args, &block)
-          return @options[sym] if args.empty?
-          @options[sym] = args.size == 1 ? args.first : args
-        end
-      end
-      
-      class Attachment
-        attr_accessor :article, :path, :permalink
-        
-        def self.find_by_year_month_day_title_attachment(year, month, day, title, attachment)
-          @@attachments.detect { |a| a.permalink == "#{title}/#{attachment}" && a.article.posted == "#{year}/#{month}/#{day}" }
-        end
-        
-        def initialize(article, name)
-          @article = article
-          @path = File.join(File.expand_path(File.dirname(article.path)), name)
-          @permalink = "#{article.permalink}/#{name}"
-          (@@attachments ||= []) << self
+
+        def tags(*tags)
+          @tags = tags.collect { |tag| Tag.new(self, tag) }
         end
 
       end
+
+      class Attachment
+        attr_accessor :article, :name, :content
+
+        def initialize(article, name)
+          @article, @name = article, name
+          @content = File.join(File.expand_path(File.dirname(article.content)), name)
+        end
+
+      end
+
+      class Tag
+        attr_accessor :article, :name
+
+        def initialize(article, name)
+          @article, @name = article, name
+        end
+
+      end
+
     end
   end
   
   register RedArtisan::Content
 end
-
-
-# #posts.year(year).month(month).day(day).title(title)
-# 
-# 
-# # class << @@posts
-# #   %w( year month day title permalink ).each do |attribute|
-# #     define_method attribute do |reference|
-# #       delete_if { |post| post[attribute.to_sym] != reference }
-# #       self
-# #     end
-# #   end
-# # end
