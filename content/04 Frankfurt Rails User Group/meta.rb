@@ -1,4 +1,4 @@
-article :frankfurt_rails_user_group do
+article 'Frankfurt Rails User Group!' do
   permalink 'frankfurt-rug-rspec-rubinius'
   posted '2007/9/12'
   tags :frankfurt, :germany, :presentation, :rails, :ruby, :usergroup

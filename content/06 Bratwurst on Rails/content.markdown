@@ -1,0 +1,5 @@
+<a href="http://flickr.com/photos/31428014@N00/1394001582/"><img src="http://farm2.static.flickr.com/1309/1394001582_1761e8f8e4.jpg?v=0" border="0" width="450" height="300"></a>
+
+[Bratwurst on Rails](http://www.bratwurst-on-rails.com/) had a great vibe and was one of the best pre-conference events I've attended. The event took place at the Kalkscheune, just near the Maritim pro Arte where RailsConf itself will be held. Quite a few people attended, and with the conference starting the next day the atmosphere was really great. Lots of excitement and activities in preparation for the following days.
+
+I particularly enjoyed meeting many of the people I'd met over at RailsConf US in May in Portland, and it was also great to see local German folks again. Great food, great beer and great entertainment, looking forward to a top conference.
