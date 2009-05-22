@@ -71,10 +71,6 @@ module Sinatra
           return @options[sym] if args.empty?
           @options[sym] = args.size == 1 ? args.first : args
         end
-
-        def [](key)
-          @options[key]
-        end        
       end
       
       class Attachment
