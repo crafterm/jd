@@ -10,6 +10,7 @@ module Sinatra
         
         # GET /contact
         app.get '/contact' do
+          @title = "Contact Details"
           erb :contact
         end
         
