@@ -26,8 +26,8 @@ module Sinatra
           @attachments[attachment]
         end
 
-        def recent(count = 10)
-          @index[0..9]
+        def recent(count = 3)
+          @index[0..(count - 1)]
         end
         
         private
