@@ -3,5 +3,5 @@
 <div class="vcard">
   posted by crafterm, <span class="published"><%=h @post.posted %></span>
 </div>
-<%= markup File.read(@post.content) %>
+<%= highlight(markup(File.read(@post.content))) %>
 </div>
