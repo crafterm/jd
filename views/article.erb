@@ -1,5 +1,7 @@
-A blog post article for: <%= params[:title] %>
-
-<div>
+<div class="hentry">
+<h2><%=h @post.title %></h2>
+<div class="vcard">
+    posted by crafterm, <span class="published"><%=h @post.posted %></span>
+</div>
 <%= markup File.read(@post.content) %>
 </div>
