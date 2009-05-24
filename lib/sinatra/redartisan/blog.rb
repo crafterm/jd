@@ -23,6 +23,7 @@ module Sinatra
         app.get '/:year/:month/:day/:title' do |year, month, day, title|
           @post = options.repository.find_by_permalink(title)
           raise NotFound, 'No such post' unless @post
+          @title = @post.title
           erb :article
         end
 
