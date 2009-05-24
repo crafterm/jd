@@ -1,0 +1,24 @@
+h1#logo {
+	background-image: url(/images/ra-logo-small-ie6.gif);
+}
+q#tagline {
+	background-image: url(/images/ra-tagline-small-ie6.gif);
+}
+body#home h1#logo {
+	background-image: url(/images/ra-logo-large-ie6.gif);
+}
+body#home q#tagline {
+	background-image: url(/images/ra-tagline-large-ie6.gif);
+}
+ul#navbar {
+	background-image: url(/images/navbar-bg-ie6.gif);
+}
+ul#navbar li a {
+	background-image: url(/images/navbar-ie6.gif);
+}
+#logocontainer {
+	background-image: url(/images/dotmesh-bg-ie6.gif);
+}
+div#footer {
+	background-image: url(/images/divline-bg-ie6.gif);
+}
