@@ -57,15 +57,15 @@ module Sinatra
       end
 
       class Article  
-        attr_accessor :permalink, :posted, :attachments, :tags, :content, :name
+        attr_accessor :permalink, :posted, :attachments, :tags, :content, :title
         
         def initialize(meta)
           @path, @content = meta, File.join(File.expand_path(File.dirname(meta)), 'content.markdown')
           instance_eval File.read(meta)
         end
         
-        def article(name, &block)
-          @name = name
+        def article(title, &block)
+          @title = title
           instance_eval &block
         end
 
