@@ -1,5 +1,10 @@
-All blog posts
-
 <% @posts.each do |post| %>
-<p><a href="<%= url(post.url) %>"><%= post.title %></a></p>
+<!-- erb :article, :post => post -->
+<div class="hentry">
+<h2><%=h post.title %></h2>
+<div class="vcard">
+    posted by crafterm, <span class="published"><%=h post.posted %></span>
+</div>
+<%= markup File.read(post.content) %>
+</div>
 <% end %>
