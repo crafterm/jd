@@ -16,6 +16,10 @@ module Sinatra
           def url(path)
             request.script_name + path
           end
+
+          def body_id
+            request.path_info.split('/')[1] || 'home'
+          end
         end
       end
       
