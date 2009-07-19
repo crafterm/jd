@@ -88,7 +88,7 @@ Implementation wise, we'll add a __fade__ operation to our Screen class, that wi
 
 The fade looks really nice, but since other applications can also perform the same effect, lets embed a small graphic in between the fade of a camera to really show that we're taking a picture of the desktop.
 
-<img src="http://farm1.static.flickr.com/94/249202834_c8d25d461f.jpg?v=0"/>
+<img src="/assets/2008/1/12/nikon.jpg"/>
 
 To do this, we need to capture the desktop in between the fade operation, and draw directly onto the display, without creating a window or any other graphical decorations. Capturing and drawing directly onto a display are discussed in the Quartz documentation [online](http://developer.apple.com/documentation/GraphicsImaging/Conceptual/QuartzDisplayServicesConceptual/Articles/DisplayCapture.html) also.
 
