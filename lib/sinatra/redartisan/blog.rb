@@ -37,7 +37,7 @@ module Sinatra
         
         # POST /blog/2009/05/12/comma-intro/comments
         app.post '/:year/:month/:day/:title/comments' do
-          # create comment and redirect to post, or use discuss feature
+          # use discuss feature
         end
         
         app.get '/atom.xml' do
