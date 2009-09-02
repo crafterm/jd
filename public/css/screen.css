@@ -1,0 +1,297 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 81% "Trebuchet MS", Helvetica, Arial, sans-serif;
+	color: #bcbcbc;
+	background: #090e11;
+	text-align: center;
+}
+a:link {
+	color: #d94249;
+	text-decoration: none;
+}
+a:visited {
+	color: #af2d33;
+	text-decoration: none;
+}
+a:active {
+	color: #ffb43d;
+}
+a:hover {
+	color: #f7777d;
+	text-decoration: underline;
+}
+#header {
+	height: 144px;
+	background: #bb1716 url(/images/ui/oort-cloud.jpg) center top repeat-x;
+	border-bottom: 1px solid #9fadb3;
+}
+body#home #header {
+	height: 289px;
+}
+span#dotmesh {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 144px;
+	margin: 0;
+	background: url(/images/ui/dot-mesh.png);
+}
+body#home span#dotmesh {
+	height: 289px;
+}
+h1, h2, h3, h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-weight: normal;
+	margin-top: 0;
+	padding-top: 1em;
+}
+h2 {
+	font-size: 2.0em;
+}
+h3 {
+	font-size: 1.6em;
+}
+h1#logo {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 22px;
+	left: 15px;
+}
+body#home h1#logo {
+	top: 45px;
+	left: 15px;
+}
+h1#logo a {
+	display: block;
+	width: 237px;
+	height: 0;
+	padding: 102px 0 0;
+	overflow: hidden;
+	background: url(/images/ui/ra-logo-mid.png) no-repeat;
+}
+body#home h1#logo a {
+	width: 473px;
+	padding: 201px 0 0;
+	background: url(/images/ui/ra-logo-large.png) no-repeat;
+}
+h1#logo img {
+	display: none;
+}
+p#tagline {
+	position: absolute;
+	top: 109px;
+	left: 159px;
+	width: 339px;
+	height: 0;
+	margin: 0;
+	padding: 19px 0 0;
+	overflow: hidden;
+	background: url(/images/ui/ra-tagline-mid.png) no-repeat;
+}
+body#home p#tagline {
+	top: 226px;
+	left: auto;
+	right: 15px;
+	width: 448px;
+	padding: 25px 0 0;
+	background: url(/images/ui/ra-tagline.png) no-repeat;
+}
+#main-content p {
+	line-height: 1.5em;
+}
+ul#navbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul#navbar li {
+	float: left;
+}
+ul#navbar li a {
+	display: block;
+	height: 0;
+	padding: 45px 0 0;
+	overflow: hidden;
+	background: url(/images/ui/navbar.png) no-repeat;
+}
+ul#navbar li#nav-home a:link, ul#navbar li#nav-home a:visited {
+	width: 88px;
+	background-position: 0 0;
+}
+ul#navbar li#nav-home a.selected:link, ul#navbar li#nav-home a.selected:visited, ul#navbar li#nav-home a:hover {
+	background-position: 0 -45px;
+}
+ul#navbar li#nav-ruby a:link, ul#navbar li#nav-ruby a:visited {
+	width: 81px;
+	background-position: -88px 0;
+}
+ul#navbar li#nav-ruby a.selected:link, ul#navbar li#nav-ruby a.selected:visited, ul#navbar li#nav-ruby a:hover {
+	background-position: -88px -45px;
+}
+ul#navbar li#nav-iphone a:link, ul#navbar li#nav-iphone a:visited {
+	width: 95px;
+	background-position: -169px 0;
+}
+ul#navbar li#nav-iphone a.selected:link, ul#navbar li#nav-iphone a.selected:visited, ul#navbar li#nav-iphone a:hover {
+	background-position: -169px -45px;
+}
+ul#navbar li#nav-blog a:link, ul#navbar li#nav-blog a:visited {
+	width: 76px;
+	background-position: -264px 0;
+}
+ul#navbar li#nav-blog a.selected:link, ul#navbar li#nav-blog a.selected:visited, ul#navbar li#nav-blog a:hover {
+	background-position: -264px -45px;
+}
+ul#navbar li#nav-contact a:link, ul#navbar li#nav-contact a:visited {
+	width: 105px;
+	background-position: -340px 0;
+}
+ul#navbar li#nav-contact a.selected:link, ul#navbar li#nav-contact a.selected:visited, ul#navbar li#nav-contact a:hover {
+	background-position: -340px -45px;
+}
+div.main-container {
+	position: relative;
+	width: 960px;
+	text-align: left;
+	margin: 0 auto;
+	overflow: auto;
+}
+div#header div.main-container {
+  overflow: visible;
+}
+div#main-content {
+	background: url(/images/ui/content-glow-large.jpg) center top no-repeat;
+	clear: both;
+}
+body#home div#main-content {
+	background: url(/images/ui/content-glow-w-header.jpg) center top no-repeat;
+}
+.inset {
+	padding: 15px;
+}
+.col-1-2 {
+	float: left;
+	width: 450px;
+	padding: 15px;
+}
+.col-1-3 {
+	float: left;
+	width: 290px;
+	padding: 15px;
+}
+.col-1-5 {
+	float: left;
+	width: 162px;
+	padding: 15px;
+}
+.first-row {
+	padding-top: 0;
+}
+div#footer {
+	background: url(/images/ui/content-glow-small.jpg) center top no-repeat;
+	clear: both;
+	padding: 0 0 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .85em;
+}
+#footer dl {
+	margin: 15px 0 2em;
+}
+#footer dt {
+	font-weight: bold;
+	color: #3c484c;
+	margin: 0 0 1em;
+}
+#footer dd {
+	margin: 1em 0 1em 15px;
+	padding: 0;
+	color: #778f99;
+}
+#footer dd a {
+	color: #778f99;
+}
+div#footer p {
+	margin: 0;
+}
+div#footer p#mini-logo {
+	margin: 5px 0 .5em;
+}
+div#footer p#copyright {
+	margin: .5em 0;
+	color: #3c484c;
+	text-align: center;
+}
+div#footer p#mini-tagline {
+	margin: .5em 0;
+	font-weight: bold;
+	color: #3c484c;
+	text-align: center;
+}
+
+h2.title {
+	margin-top: 0;
+	margin-left: -15px;
+	padding: 25px 0 0;
+}
+h2.title a {
+	display: block;
+	height: 0;
+	padding: 85px 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+h2#title-ruby-development a {
+	width: 280px;
+	background-image: url(/images/content/title-ruby-development.png);
+}
+h2#title-iphone-development a {
+	width: 282px;
+	background-image: url(/images/content/title-iphone-development.png);
+}
+
+h3.title a {
+	display: block;
+	height: 0;
+	padding: 27px 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+h3#title-red-artisan-blog a {
+	width: 143px;
+	background-image: url(/images/content/title-blog-index.png);
+}
+h3#title-about-red-artisan a {
+	width: 151px;
+	background-image: url(/images/content/title-about-index.png);
+}
+h3#title-contact-red-artisan a {
+	width: 166px;
+	background-image: url(/images/content/title-contact-index.png);
+}
+
+div.divider {
+	position: relative;
+	clear: both;
+	height: 0;
+	margin: 0;
+	padding: 3px 0 0;
+	overflow: hidden;
+	background: url(/images/ui/content-divider.png) center top no-repeat;
+}
+div.divider hr {
+	margin: 0;
+	display: none;
+}

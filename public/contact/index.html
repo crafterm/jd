@@ -2,8 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Red Artisan, agile ruby on rails specialists, Melbourne, Australia." />
-<meta name="keywords" content="red artisan, ruby on rails, ruby, rails, consulting, melbourne, australia, marcus crafter, programming, agile development, agile, software development, web, web applications" />
 <title>Red Artisan - Bespoke code and system development</title>
 <link type="text/css" rel="stylesheet" href="/css/screen.css" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
@@ -14,34 +12,31 @@ img, div, a, p, h1, h2, li, span { behavior: url(/scripts/iepngfix.htc); }
 </style><![endif]-->
 </head>
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"/>
-<script type="text/javascript">
-_uacct = "UA-1709693-1";
-urchinTracker();
-</script>
-
-<body id="<%= body_id %>">
+<body id="contact">
 <div id="header">
 	<span id="dotmesh"></span>
 	<div class="main-container">
 		<h1 id="logo"><a href="/" title="Red Artisan - Home"><img src="/images/ui/ra-logo-print.png" width="376" height="159" border="0" alt="Red Artisan" /></a></h1>
 		<p id="tagline" title="Bespoke code and software development"><em>Bespoke code and software development</em></p>
 		<ul id="navbar">
-			<li id="nav-home"><a href="/" title="Red Artisan Home" <%= %(class="selected") if body_id == 'home' %>Red Artisan Home</a></li>
-			<li id="nav-ruby"><a href="/ruby" title="Ruby Coding and Development" <%= %(class="selected") if body_id == 'ruby' %>Ruby and Rails Development</a></li>
-			<li id="nav-iphone"><a href="/iphone" title="iPhone Development" <%= %(class="selected") if body_id == 'iphone' %>iPhone Development</a></li>
-			<li id="nav-blog"><a href="/blog" title="Red Artisan Blog" <%= %(class="selected") if body_id == 'blog' %>Red Artisan Blog</a></li>
-			<li id="nav-contact"><a href="/contact" title="Contact Red Artisan" <%= %(class="selected") if body_id == 'contact' %>Contact Red Artisan</a></li>
+			<li id="nav-home"><a href="/" title="Red Artisan Home">Red Artisan Home</a></li>
+			<li id="nav-ruby"><a href="/ruby-development/" title="Ruby Coding and Development">Ruby Coding and Development</a></li>
+			<li id="nav-iphone"><a href="/iphone-development/" title="iPhone Development">iPhone Development</a></li>
+			<li id="nav-blog"><a href="/blog/" title="Red Artisan Blog">Red Artisan Blog</a></li>
+			<li id="nav-contact"><a href="/contact/" title="Contact Red Artisan" class="selected">Contact Red Artisan</a></li>
 		</ul>
 	</div>
 </div>
 <div id="main-content">
 	<div class="main-container">
-    <%= yield %>
+		<div class="inset">
+			<h2>Oh, hello</h2>
+			<p>I like to code things. Isn't that something? I think it is!</p>
+		</div>
 	</div>
 </div>
 <div id="footer">
-	<div class="divider"><hr size="1" noshade="noshade" /></div>
+	<div class="divider"><hr color="#ffffff" size="1" noshade="noshade" /></div>
 	<div class="main-container">
 		<div class="col-1-5">
 			<dl>
@@ -68,14 +63,14 @@ urchinTracker();
 		<div class="col-1-5">
 			<dl>
 				<dt>Communicate</dt>
-				<dd><a href="/blog">RA Blog</a></dd>
-				<dd><a href="/contact">Contact Red Artisan</a></dd>
-				<dd><a href="/">About Red Artisan</a></dd>
+				<dd><a href="#">RA Blog</a></dd>
+				<dd><a href="#">Contact Red Artisan</a></dd>
+				<dd><a href="#">About Red Artisan</a></dd>
 			</dl>
 		</div>
 		<div class="col-1-5">
 			<p id="mini-logo"><img src="/images/ui/ra-logo-footer.png" alt="Red Artisan" title="Red Artisan" width="162" height="66" /></p>
-			<p id="copyright">Copyright &copy; 2006-<%= Time.now.year %> Red Artisan P/L</p>
+			<p id="copyright">Copyright &copy; 2009 Red Artisan P/L</p>
 			<p id="mini-tagline">bespoke code and software development in Ruby and for the iPhone</p>
 		</div>
 	</div>

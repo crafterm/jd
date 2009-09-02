@@ -1,9 +1,37 @@
-<h2>About Red Artisan</h2>
-
-<p>Red Artisan specialises in the creation of next generation web 2.0 sites, focusing on <i>quality</i>, <i>performance</i> and <i>elegance</i> in design and implementation.</p>
-
-<p>Using technologies such as <a href="http://rubyonrails.org/">Ruby on Rails</a>, the <a href="http://developer.apple.com/iphone">iPhone</a>, and Agile development principles, Red Artisan is passionate about the development of innovative and stylish applications that stand out from the competition.</p>
-
-<p>Founded in 2007 by <a href="mailto:crafterm@redartisan.com">Marcus Crafter</a>, with over 10 years development experience in the software industry, Red Artisan offers development services to help create your internet presence.</p>
-
-<p>Based in Melbourne, Australia, and with clients located around the world, <a href="/contact">contact</a> Red Artisan to let us show you how we can help you succeed.</p>
+<div class="col-1-2 first-row">
+	<h2 class="title" id="title-ruby-development"><a href="#" title="Ruby on Rails System Development">Ruby on Rails System Development</a></h2>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+	<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+	<p><a href="/ruby"><strong>Learn More &raquo;</strong></a></p>
+</div>
+<div class="col-1-2 first-row">
+	<h2 class="title" id="title-iphone-development"><a href="#" title="iPhone Software Development">iPhone Software Development</a></h2>
+	<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+	<p><a href="/iphone"><strong>Learn More &raquo;</strong></a></p>
+</div>
+<div class="divider"><hr size="1" noshade="noshade" /></div>
+<div class="col-1-3">
+	<h3 class="title" id="title-red-artisan-blog"><a href="#" title="Red Artisan Blog">Red Artisan Blog</a></h3>
+	<p>The latest insights and development tips from Red Artisan, catering to Ruby and iPhone developers and enthusiasts alike.</p>
+	<p><strong>Latest Posts:</strong></p>
+<% @posts.each do |post| %>
+  <p><a href="<%= post.url %>"><%= post.title %></a></p>
+<% end %>
+</div>
+<div class="col-1-3">
+	<h3 class="title" id="title-about-red-artisan"><a href="#" title="About Red Artisan">About Red Artisan</a></h3>
+	<p>Red Artisan specialises in the creation of next generation web sites with a focus on quality, performance and elegance in design and implementation.</p>
+	<p>Using technologies such as <a href="http://rubyonrails.org/">Ruby on  Rails</a>, <a href="http://www.sinatrarb.com/">Sinatra</a>, and Agile development  principles, Red Artisan is passionate about the development of innovative and  stylish web sites which stand out from the competition.</p>
+</div>
+<div class="col-1-3">
+	<h3 class="title" id="title-contact-red-artisan"><a href="#" title="Contact Red Artisan">Contact Red Artisan</a></h3>
+	<p>Get in touch with Red Artisan to assist with your next Ruby on Rails project or iPhone app.</p>
+	<p><strong>E-mail:</strong> <a href="mailto:crafterm@redartisan.com">crafterm@redartisan.com</a></p>
+	<p><strong>Red Artisan Pty Ltd</strong><br />
+		PO Box 1037<br />
+		South Melbourne, VIC 3205<br />
+	Australia </p>
+	<p><strong>Phone:</strong> +61 3 9690 4546<br />
+		<strong>Mobile:</strong> +61 424 147 350</p>
+</div>
