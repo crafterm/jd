@@ -5,7 +5,7 @@ module Sinatra
         
         # GET /
         app.get '/' do
-          @posts = options.repository.recent(3)
+          @posts = options.repository.recent(4)
           erb :welcome
         end
         
