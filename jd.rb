@@ -18,9 +18,8 @@ require 'lib/sinatra/redartisan/extensions'
 module RedArtisan
   
   class App < Sinatra::Default
-    
     set :public, 'public'
-
+    enable :raise_errors
   end
   
 end
