@@ -1,7 +1,7 @@
 <div class="hentry">
 <h2><%=h @post.title %></h2>
 <div class="vcard">
-  posted by crafterm, <span class="published"><%=h @post.posted.to_s(:posted) %></span>
+  posted by <a href="mailto:<%= @post.email %>"><%= @post.author %></a>, <span class="published"><%=h @post.posted.to_s(:posted) %></span>
 </div>
 <%= highlight(markup(File.read(@post.content))) %>
 </div>

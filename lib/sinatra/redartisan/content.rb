@@ -96,6 +96,15 @@ module Sinatra
           @posted = date
         end
         
+        # REVISIT: most recent content file git commit author
+        def author
+          'crafterm'
+        end
+        
+        def email
+          'crafterm@redartisan.com'
+        end
+        
         def url
           "#{@posted}/#{@permalink}"
         end
