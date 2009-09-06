@@ -1,3 +1,5 @@
+<%= params['page'] %>
+
 <% @posts.each do |post| %>
 <!-- erb :article, :post => post -->
 <div class="hentry">
@@ -8,3 +10,9 @@
 <%= markup File.read(post.content) %>
 </div>
 <% end %>
+
+<div class="pagination">
+<% @pages.times do |i| %>
+<a <%= 'id="selected"' if current_page?(i + 1) %> href="/blog?page=<%= i + 1 %>"><%= i + 1 %></a>
+<% end %>
+</div>

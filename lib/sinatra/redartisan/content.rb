@@ -35,8 +35,20 @@ module Sinatra
           @index[0]
         end
         
+        def total_pages
+          @index.total_pages
+        end
+
+        def paginated(page_number = 1)
+          @index.page(page_number)
+        end
+        
         private
         
+          def page_size
+            @index.page_size
+          end
+          
           def article(meta)
             article = Article.new(meta)
             @index << article

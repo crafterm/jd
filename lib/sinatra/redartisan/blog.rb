@@ -17,7 +17,8 @@ module Sinatra
         
         # GET /blog
         app.get '/blog' do
-          @posts = options.repository.recent
+          @posts = options.repository.paginated(Integer(params['page']))
+          @pages = options.repository.total_pages
           erb :blog
         end
                 

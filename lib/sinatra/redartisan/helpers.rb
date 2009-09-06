@@ -32,6 +32,10 @@ module Sinatra
           def unescape_html(string)
             string.to_s.gsub("&amp;", "&").gsub("&lt;", "<").gsub("&gt;", ">").gsub("&#39;", "'").gsub("&quot;", '"')
           end
+          
+          def current_page?(page_number)
+            Integer(params['page']) == page_number
+          end
         end
       end
     end
