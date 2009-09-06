@@ -13,7 +13,7 @@ require 'lib/sinatra/redartisan/blog'
 require 'lib/sinatra/redartisan/atom'
 require 'lib/sinatra/redartisan/content'
 require 'lib/sinatra/redartisan/helpers'
-
+require 'lib/sinatra/redartisan/extensions'
 
 module RedArtisan
   
