@@ -4,9 +4,16 @@ JD_CONTENT_ROOT = File.join(File.expand_path(File.dirname(__FILE__)), 'content')
 require 'rubygems'
 gem 'sinatra-sinatra'
 require 'sinatra'
+
+require 'uuidtools'
+require 'chronic'
+require 'atom'
+
 require 'lib/sinatra/redartisan/blog'
+require 'lib/sinatra/redartisan/atom'
 require 'lib/sinatra/redartisan/content'
 require 'lib/sinatra/redartisan/helpers'
+
 
 module RedArtisan
   

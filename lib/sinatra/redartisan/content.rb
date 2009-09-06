@@ -27,7 +27,12 @@ module Sinatra
         end
 
         def recent(count = 3)
+          raise "Requested more articles (#{count}) than existing in repository (#{@index.size})" if count > @index.size
           @index[0..(count - 1)]
+        end
+        
+        def latest
+          @index[0]
         end
         
         private
@@ -75,7 +80,7 @@ module Sinatra
         end
 
         def posted(date = nil)
-          return @posted unless date
+          return Chronic.parse(@posted) unless date
           @posted = date
         end
         

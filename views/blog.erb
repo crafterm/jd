@@ -3,7 +3,7 @@
 <div class="hentry">
 <h2><a href="<%= post.url %>"><%=h post.title %></a></h2>
 <div class="vcard">
-    posted by crafterm, <span class="published"><%=h post.posted %></span>
+    posted by crafterm, <span class="published"><%=h post.posted.strftime('%d %B %Y') %></span>
 </div>
 <%= markup File.read(post.content) %>
 </div>

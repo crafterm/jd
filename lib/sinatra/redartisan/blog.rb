@@ -36,15 +36,6 @@ module Sinatra
           send_file @attachment.content, :disposition => 'attachment'
         end
         
-        # POST /blog/2009/05/12/comma-intro/comments
-        app.post '/:year/:month/:day/:title/comments' do
-          # use discuss feature
-        end
-        
-        app.get '/atom.xml' do
-          'atom to come here'
-        end
-
       end
     end
   end
