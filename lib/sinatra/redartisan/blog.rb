@@ -9,6 +9,12 @@ module Sinatra
           erb :welcome
         end
         
+        # GET /about
+        app.get '/about' do
+          @title = "About Red Artisan"
+          erb :about
+        end
+
         # GET /contact
         app.get '/contact' do
           @title = "Contact Details"
