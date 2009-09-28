@@ -56,6 +56,10 @@ h1, h2, h3, h4 {
 }
 h2 {
 	font-size: 2.0em;
+	background: url(/images/ui/content-divider.png) center top no-repeat;
+	margin: 1em 0 1em;
+	padding: 1em 0 0;
+	color: #ff3600;
 }
 h3 {
 	font-size: 1.6em;
@@ -155,12 +159,19 @@ ul#navbar li#nav-blog a:link, ul#navbar li#nav-blog a:visited {
 ul#navbar li#nav-blog a.selected:link, ul#navbar li#nav-blog a.selected:visited, ul#navbar li#nav-blog a:hover {
 	background-position: -264px -45px;
 }
-ul#navbar li#nav-contact a:link, ul#navbar li#nav-contact a:visited {
-	width: 105px;
+ul#navbar li#nav-about a:link, ul#navbar li#nav-about a:visited {
+	width: 89px;
 	background-position: -340px 0;
 }
-ul#navbar li#nav-contact a.selected:link, ul#navbar li#nav-contact a.selected:visited, ul#navbar li#nav-contact a:hover {
+ul#navbar li#nav-about a.selected:link, ul#navbar li#nav-about a.selected:visited, ul#navbar li#nav-about a:hover {
 	background-position: -340px -45px;
+}
+ul#navbar li#nav-contact a:link, ul#navbar li#nav-contact a:visited {
+	width: 105px;
+	background-position: -429px 0;
+}
+ul#navbar li#nav-contact a.selected:link, ul#navbar li#nav-contact a.selected:visited, ul#navbar li#nav-contact a:hover {
+	background-position: -429px -45px;
 }
 div.main-container {
 	position: relative;
@@ -244,7 +255,9 @@ div#footer p#mini-tagline {
 h2.title {
 	margin-top: 0;
 	margin-left: -15px;
+	margin-bottom: .5em;
 	padding: 25px 0 0;
+	background: none;
 }
 h2.title a {
 	display: block;
@@ -254,7 +267,7 @@ h2.title a {
 	overflow: hidden;
 }
 h2#title-ruby-development a {
-	width: 280px;
+	width: 251px;
 	background-image: url(/images/content/title-ruby-development.png);
 }
 h2#title-iphone-development a {
@@ -262,6 +275,10 @@ h2#title-iphone-development a {
 	background-image: url(/images/content/title-iphone-development.png);
 }
 
+h3.title {
+	background: none;
+	padding: 0;
+}
 h3.title a {
 	display: block;
 	height: 0;
@@ -294,4 +311,40 @@ div.divider {
 div.divider hr {
 	margin: 0;
 	display: none;
+}
+#blog pre {
+	position: relative;
+	width: 920px;
+	padding: 8px;
+	white-space: pre;
+	overflow: auto;
+	background: #223;
+	border: 1px solid #778;
+	color: #eec;
+	line-height: 1.5em;
+}
+#blog .vcard {
+	font-style: italic;
+	float: right;
+	position: relative;
+	top: -2em;
+	margin: -2em 0 0;
+	color: #fff;
+}
+#blog .pagination {
+	margin: 1em 0;
+	padding: 1em 0 .5em;
+	text-align: center;
+	background: url(/images/ui/content-divider.png) center top no-repeat;
+}
+#blog .pagination a {
+	display: inline-block;
+	padding: 5px 9px;
+	margin: 0 3px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.stand-out {
+	font-size: 1.3em;
 }
