@@ -1,0 +1,6 @@
+sinatra-sinatra --source gems.github.com
+uuidtools
+chronic
+ratom
+rdiscount
+ultraviolet
