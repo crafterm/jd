@@ -50,11 +50,13 @@ Indicating a successful job. Should an error occur, both the client and server w
 
 Internally, the API request to create several image previews is:
 
-    client = Airbrush::Client.new(memcache_host)
-    client.process(
-      'generate-previews', :previews, 
-        :image => File.read(OPTIONS[:image]), 
-        :sizes => { :small => [300], :large => [600] } )
+<<
+client = Airbrush::Client.new(memcache_host)
+client.process(
+  'generate-previews', :previews, 
+    :image => File.read(OPTIONS[:image]), 
+    :sizes => { :small => [300], :large => [600] } )
+>>
 
 This creates an instance of the Airbrush client, and instructs it to process a given job via the #process method. The parameters to #process specify a unique job id (also used as the return memcache queue name for any results the job may provide), the job name (:previews in this case), and arguments to the job (two sizes in this example, for the creation of 'small' and 'large' previews, with a longest edge of 300 and 600 pixels respectively). Airbrush will calculate the resultant dimensions using the aspect ratio of the image.
 
@@ -62,30 +64,32 @@ An Airbrush server reads this job request from the Starling memcache queue, proc
 
 Processing is a simple Ruby class with method names matching job names, here's an example taken from Airbrush's RMagick based image processor with the *resize* and *previews* job implementations:
 
-    module Airbrush
-      module Processors
-        module Image
-          class Rmagick < ImageProcessor
-            filter_params :image # ignore any argument called 'image' in any logging
+<<
+module Airbrush
+  module Processors
+    module Image
+      class Rmagick < ImageProcessor
+        filter_params :image # ignore any argument called 'image' in any logging
 
-            def resize(image, width, height = nil)
-              width, height = calculate_dimensions(image, width) unless height
+        def resize(image, width, height = nil)
+          width, height = calculate_dimensions(image, width) unless height
 
-              process image do
-                change_geometry("#{width}x#{height}") { |cols, rows, image| image.resize!(cols, rows) }
-              end
-            end
-      
-            def previews(image, sizes) # sizes => { :small => [200,100], :medium => [400,200], :large => [600,300] }
-              sizes.inject(Hash.new) { |m, (k, v)| m[k] = crop_resize(image, *v); m }
-            end
-      
-            # ... snip ...
-      
+          process image do
+            change_geometry("#{width}x#{height}") { |cols, rows, image| image.resize!(cols, rows) }
           end
         end
+  
+        def previews(image, sizes) # sizes => { :small => [200,100], :medium => [400,200], :large => [600,300] }
+          sizes.inject(Hash.new) { |m, (k, v)| m[k] = crop_resize(image, *v); m }
+        end
+  
+        # ... snip ...
+  
       end
     end
+  end
+end
+>>
 
 The parameters to each method are extracted from the options has passed in as arguments to the named job (similar to how Merb can extract values from the params[] hash automatically).
 

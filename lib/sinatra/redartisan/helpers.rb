@@ -11,12 +11,12 @@ module Sinatra
           alias_method :h, :escape_html
            
           def markup(string)
-            RDiscount::new(string, :smart).to_html
+            RDiscount::new(highlight(string), :smart).to_html
           end
           
           def highlight(document)
-            document.gsub(%r{<pre><code>(.*?)</code></pre>}m) do |match|
-              Uv.parse(unescape_html($1), 'xhtml', 'ruby', false, 'twilight')
+            document.gsub(%r{<<(.*?)>>}m) do |match|
+              Uv.parse($1, 'xhtml', 'ruby', false, 'twilight')
             end
           end
           
@@ -29,10 +29,6 @@ module Sinatra
             b_id.to_i == 0 ? b_id : 'blog' # numerical paths are considered blog posts
           end
 
-          def unescape_html(string)
-            string.to_s.gsub("&amp;", "&").gsub("&lt;", "<").gsub("&gt;", ">").gsub("&#39;", "'").gsub("&quot;", '"')
-          end
-          
           def current_page?(page_number)
             Integer(params['page']) == page_number
           end
