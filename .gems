@@ -4,4 +4,4 @@ chronic
 ratom
 rdiscount
 ultraviolet
-rack_hoptoad
+rack_hoptoad --version '>= 0.1.3'
