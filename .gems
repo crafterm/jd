@@ -1,4 +1,4 @@
-sinatra-sinatra --source gems.github.com
+sinatra
 uuidtools
 chronic
 ratom
