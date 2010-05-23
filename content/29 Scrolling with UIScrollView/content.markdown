@@ -92,6 +92,19 @@ maximumZoomScale/minimumZoomScale properties, and
 viewForZoomingInScrollView: in your view controller as the
 UIScrollView delegate.
 
+Also, let's not forget to be good memory management citizens and
+release both the scrollview and contentview properties in
+viewDidUnload (iPhone 3.x), or didReceiveMemoryWarning (iPhone OS 2.x).
+
+#### Code
+
+    - (void)viewDidUnload {
+        self.scrollView  = nil;
+        self.contentView = nil;
+
+        [super viewDidUnload];
+    }
+
 ### Summary
 
 I find this pattern useful for several reasons, mainly that it keeps the
@@ -105,3 +118,7 @@ content.
 
 The XCode project used to build this article and screenshots, etc, is also
 [available](/assets/2010/5/23/ScrollViewExample.zip).
+
+<strong>Updated</strong>:
+
+* Thanks to Nathan de Vries for mentioning memory management.
