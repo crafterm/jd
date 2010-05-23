@@ -77,7 +77,7 @@ height appropriately.
 
 #### Code
 
-    @synthesize scrollView, contentView, coverImage1;
+    @synthesize scrollView, contentView;
 
     - (void)viewDidLoad {
         [super viewDidLoad];
