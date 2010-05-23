@@ -121,4 +121,4 @@ The XCode project used to build this article and screenshots, etc, is also
 
 <strong>Updated</strong>:
 
-* Thanks to Nathan de Vries for mentioning memory management.
+* Thanks to Nathan de Vries for [mentioning](http://twitter.com/atnan/status/14545426638) memory management.
