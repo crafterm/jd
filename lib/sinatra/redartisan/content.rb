@@ -3,13 +3,13 @@ require 'find'
 module Sinatra
   module RedArtisan
     module Content
-      
+
       def self.registered(app)
         app.configure do
           set :repository, Repository.new(JD_CONTENT_ROOT)
         end
       end
-      
+
       class Repository
         attr_accessor :articles, :path
 
@@ -21,7 +21,7 @@ module Sinatra
         def find_by_permalink(link)
           @articles[link]
         end
-        
+
         def find_by_attachment(attachment)
           @attachments[attachment]
         end
@@ -30,11 +30,11 @@ module Sinatra
           raise "Requested more articles (#{count}) than existing in repository (#{@index.size})" if count > @index.size
           @index[0..(count - 1)]
         end
-        
+
         def latest
           @index[0]
         end
-        
+
         def total_pages
           @index.total_pages
         end
@@ -42,13 +42,13 @@ module Sinatra
         def paginated(page_number = 1)
           @index.page(page_number)
         end
-        
+
         private
-        
+
           def page_size
             @index.page_size
           end
-          
+
           def article(meta)
             article = Article.new(meta)
             @index << article
@@ -56,7 +56,7 @@ module Sinatra
             article.attachments.each { |a| @attachments[a.name] = a } if article.attachments
             puts "Registered article #{article.permalink} (posted #{article.posted})"
           end
-        
+
           def scan
             Find.find(@path) do |path|
               if FileTest.directory?(path)
@@ -73,14 +73,14 @@ module Sinatra
 
       end
 
-      class Article  
+      class Article
         attr_accessor :permalink, :posted, :attachments, :tags, :content, :title
-        
+
         def initialize(meta)
           @path, @content = meta, File.join(File.expand_path(File.dirname(meta)), 'content.markdown')
           instance_eval File.read(meta)
         end
-        
+
         def article(title, &block)
           @title = title
           instance_eval &block
@@ -95,16 +95,16 @@ module Sinatra
           return Chronic.parse(@posted) unless date
           @posted = date
         end
-        
+
         # REVISIT: most recent content file git commit author
         def author
           'crafterm'
         end
-        
+
         def email
           'crafterm@redartisan.com'
         end
-        
+
         def url
           "#{@posted}/#{@permalink}"
         end
@@ -115,6 +115,7 @@ module Sinatra
         end
 
         def tags(*tags)
+          return @tags if tags.empty?
           @tags = tags.collect { |tag| Tag.new(self, tag) }
         end
 
@@ -141,6 +142,6 @@ module Sinatra
 
     end
   end
-  
+
   register RedArtisan::Content
 end
