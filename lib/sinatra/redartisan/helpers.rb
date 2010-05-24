@@ -22,7 +22,8 @@ module Sinatra
 
           def tags(post)
             return '' unless post
-            ", #{post.tags.collect(&:name).join(', ')}"
+            tag_names = post.tags.collect { |tag| tag.name }
+            ", #{tag_names.join(', ')}"
           end
 
           def url(path)
