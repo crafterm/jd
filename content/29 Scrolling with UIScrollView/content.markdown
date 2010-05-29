@@ -117,8 +117,11 @@ well when you'd like to retrofit a UIScrollView into an existing XIB
 content.
 
 The XCode project used to build this article and screenshots, etc, is also
-[available](/assets/2010/5/23/ScrollViewExample.zip).
+[available](http://github.com/crafterm/ScrollViewExample).
 
 <strong>Updated</strong>:
 
-* Thanks to Nathan de Vries for [mentioning](http://twitter.com/atnan/status/14545426638) memory management.
+* Thanks to Nathan de Vries for
+  [mentioning](http://twitter.com/atnan/status/14545426638) memory
+  management.
+* Example uploaded to [github](http://github.com/crafterm/ScrollViewExample)
