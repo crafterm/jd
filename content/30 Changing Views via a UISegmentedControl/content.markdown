@@ -261,6 +261,9 @@ controller via the managing view controller yields a comfortable
 user experience.
 
 An example XCode project of all this in action is also
-[available](/assets/2010/5/26/SegmentedControlExample.zip) if you'd
+[available](http://github.com/crafterm/SegmentedControlExample) if you'd
 like to step through the details, enjoy.
 
+**Updated**
+
+* Example uploaded to [github](http://github.com/crafterm/SegmentedControlExample)
