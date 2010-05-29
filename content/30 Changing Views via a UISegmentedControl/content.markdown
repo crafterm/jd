@@ -134,6 +134,14 @@ few years back) and Australia, where I come from.
 
 We'll also implement our memory management methods:
 
+    - (void)didReceiveMemoryWarning {
+        [super didReceiveMemoryWarning];
+
+        for (UIViewController * viewController in self.segmentedViewControllers) {
+            [viewController didReceiveMemoryWarning];
+        }
+    }
+
     - (void)viewDidUnload {
         self.segmentedControl         = nil;
         self.segmentedViewControllers = nil;
@@ -267,3 +275,4 @@ like to step through the details, enjoy.
 **Updated**
 
 * Example uploaded to [github](http://github.com/crafterm/SegmentedControlExample)
+* Added pass of `didReceiveMemoryWarning` thanks to Jonah Williams
