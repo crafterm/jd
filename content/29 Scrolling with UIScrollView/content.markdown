@@ -25,6 +25,7 @@ Here's the steps:
 Define the scroll view in your class interface and synthesize the property in the
 implementation.
 
+    :::objective-c
     @interface MyViewController : UIViewController {
         UIScrollView * scrollView;
     }
@@ -48,6 +49,7 @@ be added to the scroll view.
 
 #### Code
 
+    :::objective-c
     @interface MyViewController : UIViewController {
         UIScrollView * scrollView;
         UIView       * contentView;
@@ -77,6 +79,7 @@ height appropriately.
 
 #### Code
 
+    :::objective-c
     @synthesize scrollView, contentView;
 
     - (void)viewDidLoad {
@@ -98,6 +101,7 @@ viewDidUnload (iPhone 3.x), or didReceiveMemoryWarning (iPhone OS 2.x).
 
 #### Code
 
+    :::objective-c
     - (void)viewDidUnload {
         self.scrollView  = nil;
         self.contentView = nil;
