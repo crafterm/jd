@@ -5,3 +5,4 @@ ratom
 rdiscount
 ultraviolet
 rack_hoptoad --version '>= 0.1.3'
+rack-codehighlighter
