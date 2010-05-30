@@ -48,6 +48,7 @@ segments later as your application grows.
 
 #### Interface
 
+    :::objective-c
     @interface SegmentManagingViewController : UIViewController <UINavigationControllerDelegate> {
         UISegmentedControl    * segmentedControl;
         UIViewController      * activeViewController;
@@ -71,6 +72,7 @@ I'll get to the `UINavigationControllerDelegate` protocol in just a minute..
 
 #### Implementation
 
+    :::objective-c
     @interface SegmentManagingViewController ()
 
     @property (nonatomic, retain, readwrite) IBOutlet UISegmentedControl * segmentedControl;
@@ -87,6 +89,7 @@ readwrite for local accessor/mutator methods, and define method
 signatures for a callback from the segmented control, and a helper
 method to create the view controllers representing each segment.
 
+    :::objective-c
     @implementation SegmentManagingViewController
 
     @synthesize segmentedControl, activeViewController, segmentedViewControllers;
@@ -134,6 +137,7 @@ few years back) and Australia, where I come from.
 
 We'll also implement our memory management methods:
 
+    :::objective-c
     - (void)didReceiveMemoryWarning {
         [super didReceiveMemoryWarning];
 
@@ -166,6 +170,7 @@ counterparts `viewWillAppear:`/`viewDidAppear:` appropriately as well to
 ensure the outbound and inbound view controllers are notified of their
 view's visual status change:
 
+    :::objective-c
     - (void)didChangeSegmentControl:(UISegmentedControl *)control {
         if (self.activeViewController) {
             [self.activeViewController viewWillDisappear:NO];
@@ -193,6 +198,7 @@ the selected segment.
 
 We also pass on any view controller life cycle methods to the active subview:
 
+    :::objective-c
     - (void)viewWillAppear:(BOOL)animated {
         [super viewWillAppear:animated];
         [self.activeViewController viewWillAppear:animated];
@@ -226,6 +232,7 @@ Without these methods bizarre side effects can occur, such as
 UITableView's within a segments subview not knowing when to
 appropriately de-highlight the selected row.
 
+    :::objective-c
     - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
         [viewController viewDidAppear:animated];
     }
