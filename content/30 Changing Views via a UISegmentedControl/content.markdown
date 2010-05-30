@@ -1,4 +1,4 @@
-<div style="float:right">
+<div style="float:right; margin-left: 10px">
   <img src="/assets/2010/5/26/1-italy.png" width="180">
   <img src="/assets/2010/5/26/2-australia.png" width="180">
 </div>
