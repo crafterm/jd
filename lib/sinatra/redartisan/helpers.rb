@@ -1,5 +1,4 @@
 require 'rdiscount'
-require 'uv'
 
 module Sinatra
   module RedArtisan
@@ -11,13 +10,7 @@ module Sinatra
           alias_method :h, :escape_html
 
           def markup(string)
-            RDiscount::new(highlight(string), :smart).to_html
-          end
-
-          def highlight(document)
-            document.gsub(%r{<<(.*?)>>}m) do |match|
-              Uv.parse($1, 'xhtml', 'ruby', false, 'twilight')
-            end
+            RDiscount::new(string, :smart).to_html
           end
 
           def tags(post)
