@@ -19,6 +19,11 @@ module Sinatra
             ", #{tag_names.join(', ')}"
           end
 
+          def title(post)
+            return '' unless post
+            " - #{post.title}"
+          end
+
           def url(path)
             request.script_name + path
           end
