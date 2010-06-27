@@ -312,7 +312,7 @@ div.divider hr {
 	margin: 0;
 	display: none;
 }
-#blog pre {
+#blog pre, #blog .updated {
 	position: relative;
 	width: 920px;
 	padding: 8px;
