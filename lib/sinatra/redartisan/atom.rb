@@ -4,6 +4,7 @@ module Sinatra
       def self.registered(app)
 
         app.get '/feed/blog/atom.xml' do
+          content_type 'application/atom+xml', :charset => 'utf-8'
 
           feed = ::Atom::Feed.new do |f|
             f.title = 'Red Artisan - Blog'
