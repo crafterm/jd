@@ -14,8 +14,8 @@ issue, and then add the fix with a discussion.
 A friend of mine [Oliver](http://deeperdesign.wordpress.com/) recorded
 the talk on his iPhone 4, and has since made it
 [available](http://www.youtube.com/watch?v=i50Z5RPFTnc) on
-YouTube. The quality is ok, but please understand its as good as a
-professional recording you'd see from WWDC.
+YouTube. The quality is great considering its an iPhone 4, but please
+ understand its not quite the level you'd see from WWDC.
 
 I really enjoyed giving the talk. The aim was to help anyone venturing
 into similar grounds with UIScrollView to recognize those issues and
