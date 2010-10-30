@@ -4,7 +4,8 @@ module Sinatra
       def self.registered(app)
 
         app.get '/feed/blog/atom.xml' do
-          content_type 'application/atom+xml', :charset => 'utf-8'
+          headers 'Content-Type'  => "application/atom+xml",
+                  'Cache-Control' => 'public, max-age=1800'
 
           feed = ::Atom::Feed.new do |f|
             f.title = 'Red Artisan - Blog'
