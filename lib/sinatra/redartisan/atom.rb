@@ -2,7 +2,7 @@ module Sinatra
   module RedArtisan
     module Atom
       def self.registered(app)
-        
+
         app.get '/feed/blog/atom.xml' do
 
           feed = ::Atom::Feed.new do |f|
@@ -24,13 +24,13 @@ module Sinatra
               f.entries << entry
             end
           end
-          
+
           feed.to_xml
         end
 
       end
     end
   end
-  
+
   register RedArtisan::Atom
 end
