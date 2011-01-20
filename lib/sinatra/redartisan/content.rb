@@ -69,6 +69,7 @@ module Sinatra
                 next
               end
             end
+            @index.sort! {|x,y| y.posted <=> x.posted }
           end
 
       end
