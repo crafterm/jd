@@ -373,8 +373,8 @@ view is deconstructed.
     }
 
     - (void)dealloc {
-        [super dealloc];
         self.stage = nil;
+        [super dealloc];
     }
 
 <img src="/assets/2010/6/6/stage-10-portrait.png" width="350" style="float:right; padding: 10px; padding-right: 20px"/>

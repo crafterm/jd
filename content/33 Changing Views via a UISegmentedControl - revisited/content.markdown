@@ -131,9 +131,9 @@ be invoked when a given segmented control index changes.
     }
 
     - (void)dealloc {
-        [super dealloc];
         self.viewControllers = nil;
         self.navigationController = nil;
+        [super dealloc];
     }
 
     @end
