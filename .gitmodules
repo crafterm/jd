@@ -1,3 +1,6 @@
 [submodule "content/30 Changing Views via a UISegmentedControl/Vendor/SegmentedControlExample"]
 	path = content/30 Changing Views via a UISegmentedControl/Vendor/SegmentedControlExample
 	url = git@github.com:crafterm/SegmentedControlExample.git
+[submodule "content/33 Changing Views via a UISegmentedControl - revisited/Vendor/SegmentedControlRevisited"]
+	path = content/33 Changing Views via a UISegmentedControl - revisited/Vendor/SegmentedControlRevisited
+	url = git@github.com:crafterm/SegmentedControlRevisited.git
