@@ -139,5 +139,13 @@ AppKit has some advanced Objective-C API's for drawing, but you can
 certainly achieve similar results by delving into Core Graphics under iOS.
 
 If you're interested in the details the code for the full project is
-available up on [GitHub](https://github.com/crafterm/IconApp). Thanks again to Matt for an inspiring [blog post]([blog](http://cocoawithlove.com/2011/01/advanced-drawing-using-appkit.html), and with some help
-understanding the final gloss gradient!
+available up on [GitHub](https://github.com/crafterm/IconApp).
+
+### Credits
+
+Thanks again to Matt for an inspiring [blog
+post]([blog](http://cocoawithlove.com/2011/01/advanced-drawing-using-appkit.html),
+and with some help understanding the final gloss gradient!
+
+Thanks to Nathan de Vries for reviewing the Core Graphics code and
+sending in a few fixes and scoping changes.
