@@ -26,8 +26,9 @@ With iOS having an equivelent UIBezierPath class but an absence of
 NSGradient, I decided to scratch the itch of porting the drawing code
 to iOS, but at a deeper level with Core Graphics directly.
 
-The code for the iOS version is available on GitHub if you're
-interested in taking a look.
+The code for the iOS version is available on
+ [GitHub](https://github.com/crafterm/IconApp)
+ if you're interested in taking a look.
 
 Generally speaking the code translated across to Core Graphics quite
 easily, and I could almost see the underlying Core Graphics calls used to
@@ -135,5 +136,5 @@ AppKit has some advanced Objective-C API's for drawing, but you can
 certainly achieve similar results by delving into Core Graphics under iOS.
 
 If you're interested in the details the code for the full project is
-available up on GitHub. Thanks again to Matt for an inspiring [blog post]([blog](http://cocoawithlove.com/2011/01/advanced-drawing-using-appkit.html), and with some help
+available up on [GitHub](https://github.com/crafterm/IconApp). Thanks again to Matt for an inspiring [blog post]([blog](http://cocoawithlove.com/2011/01/advanced-drawing-using-appkit.html), and with some help
 understanding the final gloss gradient!
