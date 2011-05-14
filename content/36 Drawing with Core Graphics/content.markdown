@@ -70,7 +70,7 @@ differ. eg:
     - (void)drawInRect:(NSRect)rect angle:(CGFloat)angle
 
 I found it useful, particularly with the non-rectangular vertical
-linear gloss gradient to use *CGContextGetClipBoundingBox* to obtain a
+linear gloss gradient to use [CGContextGetClipBoundingBox](http://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/c/func/CGContextGetClipBoundingBox) to obtain a
 CGRect containing the clipping area, and hence ease finding the
 highest and lowest point of the path to use as the start and end point.
 
@@ -131,7 +131,7 @@ soon.
 ### Summary
 
 Complex constructs can certainly be drawn using Core Graphics, and by
-breaking each part of the final image down into layers paths, fills,
+breaking each part of the final image down into layers of paths, fills,
 gradients, strokes, etc, you can build up quite intruiging and
 interesting graphics.
 
