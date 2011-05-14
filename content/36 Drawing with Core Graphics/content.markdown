@@ -24,7 +24,7 @@ smaller simpler constructs.
 
 With iOS having an equivelent UIBezierPath class but an absence of
 NSGradient, I decided to scratch the itch of porting the drawing code
-to iOS, but at a deeper level with Core Graphics directly.
+to iOS, but at a deeper level with [Core Graphics](http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html) directly.
 
 The code for the iOS version is available on
  [GitHub](https://github.com/crafterm/IconApp)
@@ -80,6 +80,7 @@ You can use *UIColor* to obtain a *CGColorRef* value, however a
 number of the CGContext* methods also accept ColorComponent values,
 eg:
 
+    :::objective-c
     CGGradientRef CGGradientCreateWithColors(
        CGColorSpaceRef space,
        CFArrayRef colors,
@@ -98,6 +99,7 @@ eg:
  defined as a white value and alpha, *components* is an array of
  pairs:
 
+    :::objective-c
     colourspace = CGColorSpaceCreateDeviceGray();
     CGFloat glossLocations[]  = { 0.0, 0.5, 1.0 };
     CGFloat glossComponents[] = { 1.0, 0.85, 1.0, 0.50, 1.0, 0.05 };
@@ -106,6 +108,7 @@ eg:
 but in the case of RGB colourspace where 4 numbers are required (red,
 green, blue and alpha), *components* expects an array of quads:
 
+    :::objective-c
     colourspace = CGColorSpaceCreateDeviceRGB();
     CGFloat tComponents[] = { 0.0, 0.68, 1.00, 0.75,
                               0.0, 0.45, 0.62, 0.55,
