@@ -4,3 +4,6 @@
 [submodule "content/33 Changing Views via a UISegmentedControl - revisited/Vendor/SegmentedControlRevisited"]
 	path = content/33 Changing Views via a UISegmentedControl - revisited/Vendor/SegmentedControlRevisited
 	url = git@github.com:crafterm/SegmentedControlRevisited.git
+[submodule "content/36 Drawing with Core Graphics/Vendor/IconApp"]
+	path = content/36 Drawing with Core Graphics/Vendor/IconApp
+	url = https://github.com/crafterm/IconApp
